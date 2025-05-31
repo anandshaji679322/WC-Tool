@@ -43,30 +43,34 @@ public class ccwc {
     }
     public static void main(String[] args) throws IOException {
 
-        if(args.length == 1){
-            System.out.println(findByteCount(args[0]) + " " + findLineCount(args[0]) + " " + wordCount(args[0]) + " " + findCharacterCount(args[0]) + " "+args[0]);
-        }else if(args.length == 2){
-            String fileName = args[1];
-            int count = 0;
-            switch (args[0]){
-                case "-c":
-                    System.out.println(fileName+" "+ findByteCount(fileName));
-                    break;
-                case  "-l":
-                    System.out.println(fileName+" "+ findLineCount(fileName));
-                    break;
-                case "-w":
-                    System.out.println(fileName+" "+ wordCount(fileName));
-                    break;
-                case "-m":
-                    System.out.println(fileName+" "+ findCharacterCount(fileName));
-                    break;
-                default:
-                    System.out.println("Invalid Flag -c, -w, -l, or -m");
+        try{
+            if(args.length == 1){
+                System.out.println(findByteCount(args[0]) + " " + findLineCount(args[0]) + " " + wordCount(args[0]) + " " + findCharacterCount(args[0]) + " "+args[0]);
+            }else if(args.length == 2){
+                String fileName = args[1];
+                int count = 0;
+                switch (args[0]){
+                    case "-c":
+                        System.out.println(fileName+" "+ findByteCount(fileName));
+                        break;
+                    case  "-l":
+                        System.out.println(fileName+" "+ findLineCount(fileName));
+                        break;
+                    case "-w":
+                        System.out.println(fileName+" "+ wordCount(fileName));
+                        break;
+                    case "-m":
+                        System.out.println(fileName+" "+ findCharacterCount(fileName));
+                        break;
+                    default:
+                        System.out.println("Invalid Flag -c, -w, -l, or -m");
 
+                }
+            }else {
+                System.out.println("Usage: java ccwc [option] filename");
             }
-        }else {
-            System.out.println("Usage: java ccwc [option] filename");
+        }catch(IOException e){
+            System.out.println(e.getMessage());
         }
     }
 }
