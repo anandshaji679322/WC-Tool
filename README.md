@@ -55,6 +55,12 @@ java ccwc -m filename.txt
 echo "Hello World" | java ccwc -c
 ```
 
+> **Note**: When using pipes (`|`) versus direct file input, you might see slightly different counts for byte (`-c`) and character (`-m`) options. This is because:
+> - Direct file input (`java ccwc -c file.txt` or `java ccwc -m file.txt`) reads the file directly
+> - Pipe input (`cat file.txt | java ccwc -c` or `cat file.txt | java ccwc -m`) processes the data through the pipe, which can affect counting
+> 
+> For most accurate results, use direct file input when possible. The line count (`-l`) and word count (`-w`) options are not affected by this difference.
+
 ## Error Handling
 
 The tool handles various error cases:
