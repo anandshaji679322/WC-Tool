@@ -1,0 +1,15 @@
+# IntelliJ project files
+.idea/
+
+# Compiled class files
+*.class
+
+# Output folder
+/out/
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Any test data you don't want to track
+hi
